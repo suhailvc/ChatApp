@@ -77,9 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           itemCount: userList.length,
                           itemBuilder: (context, index) {
                             final user = userList[index];
-                            String? imgPath =
-                                NetworkImage(user.imgpath.toString())
-                                    .toString();
+
                             return ListTile(
                               onTap: () {
                                 Navigator.push(
@@ -92,16 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                     ));
                               },
-                              leading: imgPath != null
-                                  ? CircleAvatar(
-                                      radius: 30,
-                                      backgroundImage:
-                                          NetworkImage(user.imgpath.toString()),
-                                    )
-                                  : const CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                          'assets/images/585e4bf3cb11b227491c339a.png'),
-                                    ),
+                              leading: CircleAvatar(
+                                radius: 30,
+                                backgroundImage:
+                                    NetworkImage(user.imgpath.toString()),
+                              ),
                               title: Text(user.name!,
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold)),

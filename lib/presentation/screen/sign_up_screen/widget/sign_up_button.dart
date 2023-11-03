@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chat_app/application/image_picker_provider/image_pick_provider.dart';
 import 'package:chat_app/application/sign_up_provider/sign_up_provider.dart';
+import 'package:chat_app/presentation/widgets/warning.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,10 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () async {
+        if (Provider.of<ImagePickProvider>(context, listen: false).imageUrl ==
+            null) {
+          return warning(context, "Photo is empty");
+        }
         await Provider.of<SignUpProvider>(context, listen: false).signUpUser(
             context,
             Provider.of<ImagePickProvider>(context, listen: false).imageUrl!);

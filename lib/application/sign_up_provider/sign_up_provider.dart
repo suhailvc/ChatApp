@@ -15,10 +15,7 @@ class SignUpProvider extends ChangeNotifier {
     final String name = nameController.text;
     final String email = emailController.text;
     final String password = passwordController.text;
-    if (name.isEmpty ||
-        email.isEmpty ||
-        password.isEmpty ||
-        imagePath.isEmpty) {
+    if (name.isEmpty || email.isEmpty || password.isEmpty) {
       warning(context, 'Please fill in all the fields.');
       return;
     }

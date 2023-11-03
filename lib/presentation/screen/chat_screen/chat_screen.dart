@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ChatScreen extends StatelessWidget {
-  final token;
+  final String token;
   final String fromId;
   final String title;
 
@@ -70,21 +70,20 @@ class ChatScreen extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
-                                  color: isCurrentUser
-                                      ? Colors.teal
-                                      : Colors.teal[300],
-                                  borderRadius: isCurrentUser
-                                      ? const BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          topRight: Radius.circular(20),
-                                          bottomRight: Radius.circular(20),
-                                        )
-                                      : const BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          topRight: Radius.circular(20),
-                                          bottomLeft: Radius.circular(20),
-                                        ),
-                                ),
+                                    color: isCurrentUser
+                                        ? Colors.teal
+                                        : Colors.teal[300],
+                                    borderRadius: isCurrentUser
+                                        ? const BorderRadius.only(
+                                            topLeft: Radius.circular(20),
+                                            topRight: Radius.circular(20),
+                                            bottomLeft: Radius.circular(20),
+                                          )
+                                        : const BorderRadius.only(
+                                            topLeft: Radius.circular(20),
+                                            topRight: Radius.circular(20),
+                                            bottomRight: Radius.circular(20),
+                                          )),
                                 child: Text(
                                   messages[index].message!,
                                   style: const TextStyle(

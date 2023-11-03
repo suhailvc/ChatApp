@@ -35,21 +35,10 @@ class DrawerScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      NetworkImage(user.imgpath.toString()) != null
-                          ? CircleAvatar(
-                              radius: 60,
-                              backgroundImage:
-                                  NetworkImage(user.imgpath.toString()),
-                            )
-                          : const CircleAvatar(
-                              radius: 60,
-                              backgroundImage: AssetImage(
-                                  'assets/images/585e4bf3cb11b227491c339a.png'),
-                            ),
-                      // CircleAvatar(
-                      //   radius: 60.0,
-                      //   backgroundImage: NetworkImage(user.imgpath.toString()),
-                      // ),
+                      CircleAvatar(
+                        radius: 60,
+                        backgroundImage: NetworkImage(user.imgpath.toString()),
+                      ),
                       SizedBox(height: size.height * 0.03),
                       Text(
                         user.name.toString(),
